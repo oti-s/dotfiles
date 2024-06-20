@@ -4,7 +4,8 @@ ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="robbyrussell"
 
 # Useful oh-my-zsh plugins for Le Wagon bootcamps
-plugins=(git gitfast last-working-dir common-aliases zsh-syntax-highlighting history-substring-search)
+plugins=(ssh-agent git gitfast last-working-dir common-aliases 
+zsh-syntax-highlighting history-substring-search pyenv direnv)
 
 # (macOS-only) Prevent Homebrew from reporting - https://github.com/Homebrew/brew/blob/master/docs/Analytics.md
 export HOMEBREW_NO_ANALYTICS=1
@@ -70,3 +71,15 @@ export EDITOR=code
 
 # Set ipdb as the default Python debugger
 export PYTHONBREAKPOINT=ipdb.set_trace
+
+# data-context-and-setup task
+export PYTHONPATH="/Users/billy/code/oti-s/data-context-and-setup:$PYTHONPATH"
+
+export GOOGLE_APPLICATION_CREDENTIALS=/Users/billy/code/keys/le-wagon-1050-billy-65aa82f789ea.json
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/billy/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/billy/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/billy/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/billy/google-cloud-sdk/completion.zsh.inc'; fi
+eval "$(direnv hook zsh)"
